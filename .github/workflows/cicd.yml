@@ -1,0 +1,23 @@
+name: My First CI CD Pipeline
+
+# 1. Idhu epo trigger aaganum? (Main branch-la push pannumpodhu)
+on:
+  push:
+    branches: [ "main" ]
+
+# 2. Enna vela nadakanum? (Jobs)
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest # Oru free virtual Linux cloud machine-la run aagum
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4 # Online code-ah andha machine-gulla eduthu vaikum
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4 # Node environment install pannum
+      with:
+        node-version: '20'
+
+    - name: Run Application
+      run: node app.js # Namma app.js code-ah run panni check pannum
