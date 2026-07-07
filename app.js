@@ -1,0 +1,1 @@
+console.log("CI/CD Automation Project Started Successfully!");
